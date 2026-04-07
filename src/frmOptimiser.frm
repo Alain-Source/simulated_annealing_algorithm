@@ -73,7 +73,7 @@ Private Sub btnEvaluate_Click()
  Dim alpha As Double                'Cooling Parameter
  
  Dim energy_Diff As Double          'Energy difference between current guess and neighbouring guess
- Dim control_Factor As Double       'Ensures R_comp (comparison value) does cause an overflow error
+ Dim control_Factor As Double       'Ensures R_comp (comparison value) does not cause an overflow error
  
  Dim R As Double                    'Random number between 0 and 1
  Dim R_comp As Double               'Value R is compared against => algorithim comparison value
@@ -108,12 +108,12 @@ If tbAlpha.Text = "" Then            'Test for empty alpha box
 End If
 
 If tbEpochMax.Text = "" Then           'Test for empty epoch box
-    MsgBox "Please enter a function in the epoch box"
+    MsgBox "Please enter a Max Epochs value"
     Exit Sub
 End If
 
 If tbMovesMin.Text = "" Then           'Test for empty moves box
-    MsgBox "Please enter a function in the moves box"
+    MsgBox "Please enter a Min Moves value"
     Exit Sub
 End If
 
@@ -241,7 +241,7 @@ While (Sols_Not_Acc <= Sols_Not_Acc_max) And (Repeated_val < 900) And (Position_
         '-----------------------------------------
         
         
-        'ASSSESS ENERGY DIFFERENCE: between current & neighbouring solution
+        'ASSESS ENERGY DIFFERENCE: between current & neighbouring solution
         '-----------------------------------------
         energy_Diff = EvaluateFunction(x_current, y_current) - EvaluateFunction(x_prime, y_prime)
         '-----------------------------------------
@@ -365,7 +365,7 @@ End If
 tbResults.Text = CStr(Format((EvaluateFunction(x_current, y_current)), "0.000"))    'Display Max/Min
 
 
-CurrentFileName = ThisWorkbook.Path & "current.gif"                             'Upload graph to UI
+CurrentFileName = Environ("TEMP") & "\current.gif"                             'Upload graph to UI
 Set CurrentChart = ThisWorkbook.Sheets("Results").ChartObjects("ConvergenceChart").Chart
 CurrentChart.Export Filename:=CurrentFileName, FilterName:="GIF"
 frmOptimiser.imgGraph.Picture = LoadPicture(CurrentFileName)
