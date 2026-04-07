@@ -466,6 +466,6 @@ Private Sub tbResults_Change()
 
 End Sub
 
-Private Sub UserForm_Click()
-
+Private Sub UserForm_Initialize()
+    TabOption_Change
 End Sub
