@@ -1,0 +1,4 @@
+# Don't track the binary workbook - use GitHub Releases instead
+*.xlsm
+~$*.xls*
+*.tmp
