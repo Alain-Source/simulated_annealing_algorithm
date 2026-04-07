@@ -1,11 +1,11 @@
 # Simulated Annealing Algorithm — VBA Excel
 
-An Excel VBA implementation of the **Simulated Annealing** metaheuristic optimisation algorithm, built as a Year 2 Industrial Engineering project at Stellenbosch University (2022).
+An Excel VBA implementation of the **Simulated Annealing** metaheuristic optimisation algorithm, built as a 2nd Year Industrial Engineering project at Stellenbosch University (2022).
 The Simulated Annealing algorithm finds the global minimum or maximum of user-defined mathematical functions using a cooling-schedule inspired by the annealing process in metallurgy.
 
 ## Screenshots
 
-### UserForm — Default
+### UserForm — Startup
 ![frmOptimiser default](screenshots/frmOptimiser_default.png)
 
 ### UserForm — Results
@@ -89,9 +89,9 @@ If you would prefer to inspect or modify the code without downloading the macro-
 
 ## Authors
 
-Built by **Semantic Syndicate** — a Year 2 Industrial Engineering project at Stellenbosch University (2022).
+Built by **Semantic Syndicate** — a 2nd Year Industrial Engineering project at Stellenbosch University (2022).
 - [Alain Rautenbach](https://github.com/Alain-Source)
-- Nico Olivier
+- [Nico Olivier](https://github.com/Nicof10)
 
 ## License
 
