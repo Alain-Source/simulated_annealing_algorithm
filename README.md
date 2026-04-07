@@ -95,4 +95,4 @@ Built by **Semantic Syndicate** — a Year 2 Industrial Engineering project at S
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
