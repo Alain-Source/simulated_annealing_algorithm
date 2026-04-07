@@ -1,0 +1,10 @@
+# Treat VBA source as text
+*.frm text eol=crlf
+*.bas text eol=crlf
+*.cls text eol=crlf
+
+# Binary - don't try to diff
+*.frx binary
+*.xlsm binary
+*.gif binary
+*.png binary

@@ -1,0 +1,4 @@
+# Don't track the binary workbook in git history - use GitHub Releases instead
+*.xlsm
+~$*.xls*
+*.tmp
