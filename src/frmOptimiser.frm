@@ -421,25 +421,33 @@ tbMovesMin.Value = 100
 tbInput.Value = "(x^2+y-11)^2+(x+y^2-7)^2"
 End Sub
 
+Private Sub lblEpochsWithoutAcceptance_Click()
+
+End Sub
+
+Private Sub lblMovesPerEpoch_Click()
+
+End Sub
+
 Private Sub TabOption_Change()      'Standard preset and Advanced preset
 If TabOption.Value = 0 Then
 tbMovesMin.Visible = False
 tbEpochMax.Visible = False
 tbSolutionsNA.Visible = False
 tbAlpha.Visible = False
-Label10.Visible = False
-Label11.Visible = False
-Label12.Visible = False
-Label13.Visible = False
+lblMaxIterationsPerEpoch.Visible = False
+lblMovesPerEpoch.Visible = False
+lblCoolingFactor.Visible = False
+lblEpochsWithoutAcceptance.Visible = False
 Else
 tbMovesMin.Visible = True
 tbEpochMax.Visible = True
-tbSolutionsNA.Visible = True
+lblMaxIterationsPerEpoch.Visible = True
 tbAlpha.Visible = True
-Label10.Visible = True
-Label11.Visible = True
-Label12.Visible = True
-Label13.Visible = True
+tbSolutionsNA.Visible = True
+lblMovesPerEpoch.Visible = True
+lblCoolingFactor.Visible = True
+lblEpochsWithoutAcceptance.Visible = True
 End If
 tbUpperBound.Value = 2
 tbLowerBound.Value = -2
@@ -448,6 +456,10 @@ tbSolutionsNA.Value = 50
 tbEpochMax.Value = 100
 tbMovesMin.Value = 100
 tbInput.Value = "(x^2+y-11)^2+(x+y^2-7)^2"
+End Sub
+
+Private Sub tbAlpha_Change()
+
 End Sub
 
 Private Sub tbResults_Change()
