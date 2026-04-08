@@ -31,7 +31,7 @@ The Simulated Annealing algorithm finds the global minimum or maximum of user-de
 2. Open .xlsm file in Excel (Windows only) and **Enable Macros** when prompted
 3. Press keyboard shortcut `Alt+F11` → double-click `frmOptimiser` in the file tree in the top left options panel → press `F5` to launch
 4. Enter a function and set bounds
-5. Click **Help** button for function explanation limitations
+5. Click **Help** button for function limitation explanation
 6. Click **Evaluate** to run algorithm
 
 > **Note:** The UserForm uses Windows-only VBA controls (MSForms) and chart export via GIF. It will not run in Excel for Mac or Excel Online.
