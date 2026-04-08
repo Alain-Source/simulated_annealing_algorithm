@@ -6,7 +6,7 @@ The Simulated Annealing algorithm finds the global minimum or maximum of user-de
 ## Screenshots
 
 ### UserForm — Startup
-![frmOptimiser default](screenshots/frmOptimiser_default.png)
+![frmOptimiser startup](screenshots/frmOptimiser_startup.png)
 
 ### UserForm — Results
 ![frmOptimiser results](screenshots/frmOptimiser_results.png)
@@ -64,11 +64,13 @@ The random perturbations and acceptance of non-improving solutions allow the alg
 
 ```
 ├── README.md
+├── LICENSE
 ├── .gitattributes
 ├── .gitignore
 ├── src/
-│   ├── frmOptimiser.frm      # VBA source code (algorithm + UI logic)
-│   └── frmOptimiser.frx      # UserForm binary layout (controls, positions)
+│   ├── frmOptimiser.frm              # UserForm UI and event handlers
+│   ├── frmOptimiser.frx              # UserForm binary layout
+│   └── modSimulatedAnnealing.bas     # SA algorithm, EvaluateFunction, SAResult Type
 └── screenshots/
     ├── frmOptimiser_default.png
     ├── frmOptimiser_results.png
@@ -84,8 +86,10 @@ If you would prefer to inspect or modify the code without downloading the macro-
 
 1. Open a blank `.xlsm` workbook in Excel
 2. Press the keyboard shortcut `Alt+F11` to open the VBA editor
-3. Go to **File → Import File** in the VBA window and select `src/frmOptimiser.frm`
-4. The frmOptimiser UserForm will be imported with all of the code
+3. Go to **File → Import File** in the VBA window and select `src/modSimulatedAnnealing.bas`
+4. Go to **File → Import File** in the VBA window and select `src/frmOptimiser.frm`
+5. The algorithm module and frmOptimiser UserForm will be imported with all of the code
+
 
 ## Authors
 
