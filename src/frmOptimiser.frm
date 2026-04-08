@@ -52,32 +52,29 @@ Private Sub btnEvaluate_Click()
     
     'INPUT ERROR PREVENTION
     '-----------------------------------------
-    If tbInput.Text = "" Then            'Test for empty function box
+    
+    ' Test for empty input
+    If tbInput.Text = "" Then
         MsgBox "Please enter a function in the input box"
         Exit Sub
     End If
     
-    If tbUpperBound.Text = "" Then        'Test for empty upper bound box
+    If tbUpperBound.Text = "" Then
         MsgBox "Please enter an Upper Bound value"
         Exit Sub
     End If
     
-    If tbLowerBound.Text = "" Then        'Test for empty lower bound box
+    If tbLowerBound.Text = "" Then
         MsgBox "Please enter a Lower Bound value"
         Exit Sub
     End If
     
-    If tbAlpha.Text = "" Then             'Test for empty alpha box
-        MsgBox "Please enter an Alpha value"
-        Exit Sub
-    End If
-    
-    If tbEpochMax.Text = "" Then           'Test for empty epoch box
+    If tbEpochMax.Text = "" Then
         MsgBox "Please enter a Max Epochs value"
         Exit Sub
     End If
     
-    If tbMovesMin.Text = "" Then           'Test for empty moves box
+    If tbMovesMin.Text = "" Then
         MsgBox "Please enter a Min Moves value"
         Exit Sub
     End If
@@ -87,6 +84,63 @@ Private Sub btnEvaluate_Click()
         Exit Sub
     End If
     
+    If tbAlpha.Text = "" Then
+        MsgBox "Please enter an Alpha value"
+        Exit Sub
+    End If
+    
+    'Test for Numeric Input
+    If Not IsNumeric(tbUpperBound.Text) Then
+        MsgBox "Upper Bound must be a number"
+        Exit Sub
+    End If
+    
+    If Not IsNumeric(tbLowerBound.Text) Then
+        MsgBox "Lower Bound must be a number"
+        Exit Sub
+    End If
+    
+    If Not IsNumeric(tbAlpha.Text) Then
+        MsgBox "Alpha must be a number"
+        Exit Sub
+    End If
+    
+    If Not IsNumeric(tbEpochMax.Text) Then
+        MsgBox "Max Epochs must be a number"
+        Exit Sub
+    End If
+    
+    If Not IsNumeric(tbMovesMin.Text) Then
+        MsgBox "Min Moves must be a number"
+        Exit Sub
+    End If
+    
+    If Not IsNumeric(tbSolutionsNA.Text) Then
+        MsgBox "Epochs Without Acceptance must be a number"
+        Exit Sub
+    End If
+    
+    'Test for valid input conditions
+    alpha = tbAlpha.Value
+    If alpha <= 0 Or alpha >= 1 Then
+        MsgBox "Please enter an Alpha value between 0 and 1 (exclusive)"
+        Exit Sub
+    End If
+    
+    If CInt(tbEpochMax.Text) <= 0 Then
+        MsgBox "Max Epochs must be a positive number"
+        Exit Sub
+    End If
+    
+    If CInt(tbMovesMin.Text) <= 0 Then
+        MsgBox "Min Moves must be a positive number"
+        Exit Sub
+    End If
+    
+    If CInt(tbSolutionsNA.Text) <= 0 Then
+        MsgBox "Epochs Without Acceptance must be a positive number"
+        Exit Sub
+    End If
     '-----------------------------------------
     
     ' TEST UPPER & LOWER BOUND CONDITIONS
@@ -103,13 +157,8 @@ Private Sub btnEvaluate_Click()
         MsgBox "The upper and lower bound should be at least 1 apart"
         Exit Sub
     End If
-    
-    alpha = tbAlpha.Value
-    If alpha >= 1 Then                       'Test for alpha box conditions
-        MsgBox "Please enter an Alpha value < 1"
-        Exit Sub
-    End If
     '-----------------------------------------
+
     
     ' PREPARE UI
     '-----------------------------------------
@@ -182,15 +231,15 @@ Private Sub btnHelp_Click() 'Help button display
     MsgBox ("Limitations of the program:" + vbCrLf + vbCrLf + "1) The function must be continuous within the upper and lower bounds" + vbCrLf + vbCrLf + "2) Only the following characters may be used in the function input: +  -  *  /  ^  .  ( )  e  sin( )  cos( )  x  y  rational numbers" + vbCrLf + vbCrLf + "3) Symbols and numbers that are to be multiplied should be seperated by a *. Examples: yx, 3e, 4sinx, 5(3) should be written as y*x, 3*e, 4*sin(x) and 5*(3)" + vbCrLf + vbCrLf + "4) Negative x and y values should be written as: -1*x or -1*y" + vbCrLf + vbCrLf + "5) You can't use a variable to the power of a variable. Example: x^y or y^x" + vbCrLf + vbCrLf + "6) Complicated exponents should be contained in parentheses. Example: x^(3+2/1.5*3)")
 End Sub
 
-Private Sub SetAdvancedControlsVisibility(visible As Boolean)
-    tbMovesMin.visible = visible
-    tbEpochMax.visible = visible
-    tbSolutionsNA.visible = visible
-    tbAlpha.visible = visible
-    lblMaxIterationsPerEpoch.visible = visible
-    lblMovesPerEpoch.visible = visible
-    lblCoolingFactor.visible = visible
-    lblEpochsWithoutAcceptance.visible = visible
+Private Sub SetAdvancedControlsVisibility(isVisible As Boolean)
+    tbMovesMin.visible = isVisible
+    tbEpochMax.visible = isVisible
+    tbSolutionsNA.visible = isVisible
+    tbAlpha.visible = isVisible
+    lblMaxIterationsPerEpoch.visible = isVisible
+    lblMovesPerEpoch.visible = isVisible
+    lblCoolingFactor.visible = isVisible
+    lblEpochsWithoutAcceptance.visible = isVisible
 End Sub
 
 Private Sub ResetDefaults()

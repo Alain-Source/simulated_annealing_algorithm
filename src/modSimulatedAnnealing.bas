@@ -78,7 +78,7 @@ Public Function RunSimulatedAnnealing( _
      Dim control_Factor As Double       'Ensures R_comp (comparison value) does not cause an overflow error
      
      Dim R As Double                    'Random number between 0 and 1
-     Dim R_comp As Double               'Value R is compared against => algorithim comparison value
+     Dim R_comp As Double               'Value R is compared against => algorithm comparison value
      
      Dim dataCount As Long
      dataCount = 0
